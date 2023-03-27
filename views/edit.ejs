@@ -1,0 +1,43 @@
+<section>
+    <div class=" container row">
+      <div class="ml-5 col-md-6">
+        <h2 class="text-center mt-5">Edit User</h2>
+       
+        <form action="/admin/editsubmit/<%-userdetails._id %> " method="post" name="editform" onsubmit="return validation(12)"   >
+            
+            
+                <label for="">Name</label>
+                <input type="text" name="updatename" id="editname" class="form-control"  value="<%- userdetails.name %>  ">
+        
+                <label for="">Email</label>
+                <input type="text" name="email" class="form-control " id="editemail"value="<%- userdetails.email %>  ">
+
+              
+        
+                
+                <button  type="submit" class="btn btn-success mt-4"  >Submit</button>
+        
+        </form>
+      </div>
+    </div>
+  </section>
+  <script>
+    function validation(a) {
+      const name=document.getElementById('editname').value;
+        const email=document.getElementById('editemail').value;
+        console.log(name);
+        
+       
+if (email==''|| name=="" ){  
+  alert("email can't be blank"); 
+  return false;
+  console.log(12222222); 
+    
+}
+  else{
+alert(sucesss)
+return true
+  }
+
+    }
+</script>

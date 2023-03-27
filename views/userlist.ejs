@@ -1,0 +1,39 @@
+
+<section >
+    <div class="container" >
+        <div class="">
+            <a href="/admin/add-user" class="btn btn-success my-5">Add Users</a>
+            <a href="/admin/logoutadmin" class="btn btn-success my-5">logout</a>
+               <form class="d-flex" method="post" action="/admin/searchdata">
+        <input class="form-control me-2" type="search" name="searchdata" placeholder="Search" value="" aria-label="Search">
+        <button class="btn btn-outline-success btn-sm" type="submit"> Search</button>
+      </form>
+        </div>
+        <table class="table mt-5 display" id="usersTable">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Options</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <%for (let i = 0; i < userdetails.length; i++) { %>
+                    <tr>
+              <td> <%- userdetails[i].name %></td>
+              <td> <%- userdetails[i].email%></td>
+              <td><a href="/admin/edituser/<%- userdetails[i]._id %> " class="btn btn-primary">Edit</a>
+                <a href="/admin/deleteuser/<%- userdetails[i]._id %> " class="btn btn-danger"  onclick=" return confirm('Are you sure to <%- userdetails[i].name %> delete ?')">Delete</a>
+              </td>
+            </tr>
+            <% } %>
+            
+              
+            </tbody>
+          
+            
+        </table>
+    </div>
+
+</section>

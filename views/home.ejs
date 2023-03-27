@@ -1,0 +1,60 @@
+<section><!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <a class="navbar-brand me-2" href="####">
+        <h1 style="color: darkblue;">CK</h1>
+        
+      </a>
+
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample"
+        aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarButtonsExample">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">ITEMS</a>
+          </li>
+        </ul>
+       
+        <!-- Left links -->
+
+        <div class="d-flex align-items-center">
+
+          <a href="/logout" class="btn btn-danger">Logout</a>
+
+        </div>
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+</section>
+<section class="mt-5">
+  <div class="row  cols-md-3 ">
+    <% for( let index = 0; index < product.length; index++ ) { %>
+    
+    <div class="col">
+      <div class="card" style=" width: 150px;">
+           <img src="<%=product[index].img %>" class="card-img-top" alt="Skyscrapers" style="height: 150px; object-fit: contain;" /> 
+        <div class="card-body">
+          <h5 class="card-title"><%= product[index].price%> </h5>
+         
+        </div>
+        <div class="card-footer">
+          <small class="text-muted"> <%= product[index].description %> </small>
+        </div>
+      </div>
+
+    </div>
+    
+    <% } %>
+  </div>
+</section>
